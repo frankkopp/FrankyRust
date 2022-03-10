@@ -41,8 +41,8 @@ fn flip2(color: &Color) -> Color {
 
 
 fn criterion_benchmark(c: &mut Criterion) {
-    // c.bench_function("bench match", |b| b.iter(|| black_box(flip(&Color::Black))));
-    // c.bench_function("bench if", |b| b.iter(|| black_box(flip2(&Color::Black))));
+    c.bench_function("bench match", |b| b.iter(|| black_box(flip(&Color::Black))));
+    c.bench_function("bench if", |b| b.iter(|| black_box(flip2(&Color::Black))));
 
     c.bench_function("bench from1", |b| b.iter(|| black_box(File::from_index(4))));
     c.bench_function("bench from2", |b| b.iter(|| black_box(File::from_index(4))));
